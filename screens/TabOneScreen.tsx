@@ -21,6 +21,7 @@ const styles = StyleSheet.create({
   },
 })
 
+// https://stackoverflow.com/questions/44368194/react-js-sequence-of-timed-state-changes
 const TabOneScreen = () => {
   const [count, setCount] = useState(0)
 
