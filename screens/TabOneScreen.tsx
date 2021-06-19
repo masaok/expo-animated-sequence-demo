@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { StyleSheet } from 'react-native'
 
-import EditScreenInfo from '../components/EditScreenInfo'
 import { Text, View } from '../components/Themed'
 
 const styles = StyleSheet.create({
@@ -25,10 +24,6 @@ const styles = StyleSheet.create({
 const TabOneScreen = () => {
   const [count, setCount] = useState(0)
 
-  useEffect(() => {
-    animateSequence()
-  }, [])
-
   const animateSequence = () => {
     const TOTAL = 3
     var setActive = setInterval(() => {
@@ -39,6 +34,15 @@ const TabOneScreen = () => {
       }
     }, 1000)
   }
+
+  useEffect(() => {
+    animateSequence()
+  }, [])
+
+  useEffect(() => {
+    console.log('COUNT EFFECT > COUNT: ' + count)
+    setCount(count + 1)
+  }, [count])
 
   return (
     <View style={styles.container}>
